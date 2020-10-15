@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Test01 | 大西瓜的高端博客</title>
+<title>MAC终端调整指针最大移动速度 | 大西瓜的高端博客</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,9 +18,16 @@
 
 
 
-    <meta name="description" content="001
-" />
-    <meta name="keywords" content="" />
+    <meta name="description" content="一、通过终端来设置指针移动的最大速度：
+
+1、查看当前速度：   
+
+    defaults read -g com.apple.mouse.scaling
+
+2、修改指令：      
+
+    defaults write -g co..." />
+    <meta name="keywords" content="MAC" />
   </head>
   <body>
     <div id="app" class="main">
@@ -91,23 +98,56 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">Test01</h2>
-            <div class="post-date">2020-10-15</div>
+            <h2 class="post-title">MAC终端调整指针最大移动速度</h2>
+            <div class="post-date">2019-01-15</div>
+            
+              <div class="feature-container" style="background-image: url('https://supersuika.github.io/post-images/macmousemove.jpg')">
+              </div>
             
             <div class="post-content" v-pre>
-              <p>001</p>
+              <p>一、通过终端来设置指针移动的最大速度：</p>
+<!-- more -->
+<pre><code>1、查看当前速度：   
+
+    defaults read -g com.apple.mouse.scaling
+
+2、修改指令：      
+
+    defaults write -g com.apple.mouse.scaling  10.5 (建议数值7-10)
+
+3、重启
+</code></pre>
+<hr>
+<hr>
+<p>备注：<br>
+二、其他相关调整：</p>
+<!-- more -->
+<pre><code>1、滚轮速度：
+
+    defaults write -g com.apple.scrollwheel.scaling 1.2
+
+2、鼠标加速度（双击阈值）：
+   
+    defaults write -g com.apple.mouse.doubleClickThreshold 0.75 
+    
+3、移动速度初始值：
+
+    defaults write -g com.apple.mouse.scaling 5  
+
+    自己根据需要调低调高，系统重启后生效。
+    如果设置出现异常，可以使用以上三个参数值，并根据自己的需要适当调整。
+</code></pre>
 
             </div>
             
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://supersuika.github.io/post/macmousemove/">
-                  <h3 class="post-title">
-                    MAC终端调整指针最大移动速度
-                  </h3>
-                </a>
+              <div class="tag-container">
+                
+                  <a href="https://supersuika.github.io/tag/LcrcrsQ6Z/" class="tag">
+                    MAC
+                  </a>
+                
               </div>
+            
             
 
             

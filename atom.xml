@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://supersuika.github.io</id>
     <title>大西瓜的高端博客</title>
-    <updated>2020-10-15T08:25:03.368Z</updated>
+    <updated>2020-10-15T09:25:13.782Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://supersuika.github.io"/>
     <link rel="self" href="https://supersuika.github.io/atom.xml"/>
@@ -26,6 +26,48 @@
         </link>
         <updated>2020-10-15T08:21:04.000Z</updated>
         <content type="html"><![CDATA[<p>001</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[MAC终端调整指针最大移动速度]]></title>
+        <id>https://supersuika.github.io/post/macmousemove/</id>
+        <link href="https://supersuika.github.io/post/macmousemove/">
+        </link>
+        <updated>2019-01-15T09:02:57.000Z</updated>
+        <summary type="html"><![CDATA[<p>一、通过终端来设置指针移动的最大速度：</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>一、通过终端来设置指针移动的最大速度：</p>
+<!-- more -->
+<pre><code>1、查看当前速度：   
+
+    defaults read -g com.apple.mouse.scaling
+
+2、修改指令：      
+
+    defaults write -g com.apple.mouse.scaling  10.5 (建议数值7-10)
+
+3、重启
+</code></pre>
+<hr>
+<hr>
+<p>备注：<br>
+二、其他相关调整：</p>
+<!-- more -->
+<pre><code>1、滚轮速度：
+
+    defaults write -g com.apple.scrollwheel.scaling 1.2
+
+2、鼠标加速度（双击阈值）：
+   
+    defaults write -g com.apple.mouse.doubleClickThreshold 0.75 
+    
+3、移动速度初始值：
+
+    defaults write -g com.apple.mouse.scaling 5  
+
+    自己根据需要调低调高，系统重启后生效。
+    如果设置出现异常，可以使用以上三个参数值，并根据自己的需要适当调整。
+</code></pre>
 ]]></content>
     </entry>
 </feed>
