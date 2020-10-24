@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://supersuika.github.io/favicon.ico?v=1603541623004">
+<link rel="shortcut icon" href="https://supersuika.github.io/favicon.ico?v=1603541877562">
 <link rel="stylesheet" href="https://supersuika.github.io/styles/main.css">
 
 
@@ -24,10 +24,11 @@ Terminal下先切换路径。
 cd ~
 cd Desktop
 touch keys
-cd keys
+cd keys 
 打开openssl。
 
-genrsa -out app_private_key.pem   20..." />
+
+genrsa -out app_private_key.pem   ..." />
     <meta name="keywords" content="Django,Alipay" />
   </head>
   <body>
@@ -37,7 +38,7 @@ genrsa -out app_private_key.pem   20..." />
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://supersuika.github.io">
-        <img src="https://supersuika.github.io/images/avatar.png?v=1603541623004" class="site-logo">
+        <img src="https://supersuika.github.io/images/avatar.png?v=1603541877562" class="site-logo">
         <h1 class="site-title">大西瓜的高端博客</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -109,15 +110,17 @@ genrsa -out app_private_key.pem   20..." />
               <p>一、通过openssl生成私钥和公钥。<br>
 Terminal下先切换路径。</p>
 <!-- more -->
-<p>cd ~<br>
-cd Desktop<br>
-touch keys<br>
-cd keys<br>
-打开openssl。</p>
+<pre><code>cd ~
+cd Desktop
+touch keys
+cd keys 
+打开openssl。
+</code></pre>
 <!-- more -->
-<p>genrsa -out app_private_key.pem   2048  # 私钥<br>
-rsa -in app_private_key.pem -pubout -out app_public_key.pem # 导出公钥，用于之后在Alipay生成应用公钥<br>
-<img src="https://supersuika.github.io/post-images/1603537462218.png" alt="" loading="lazy"></p>
+<pre><code>genrsa -out app_private_key.pem   2048  # 私钥
+rsa -in app_private_key.pem -pubout -out app_public_key.pem # 导出公钥，用于之后在Alipay生成应用公钥
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://supersuika.github.io/post-images/1603537462218.png" alt="" loading="lazy"></figure>
 <p>二、在支付宝开放平台生成支付宝公钥。<br>
 支付宝开放平台网址  https://open.alipay.com/platform/home.htm<br>
 <img src="https://supersuika.github.io/post-images/1603538119249.png" alt="" loading="lazy"><br>
