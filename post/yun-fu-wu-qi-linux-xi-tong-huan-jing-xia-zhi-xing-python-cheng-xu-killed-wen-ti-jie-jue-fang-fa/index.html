@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>标签列表 | 大西瓜的高端博客</title>
+<title>云服务器Linux系统环境下，执行python程序killed问题解决方法。 | 大西瓜的高端博客</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -12,13 +12,24 @@
 <link rel="stylesheet" href="https://supersuika.github.io/styles/main.css">
 
 
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
 
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
 
-    <meta name="description" content="温故而知新，往来无白丁。">
+    <meta name="description" content="服务器操作系统：CentOS 7.6 64bit
+Python：3.6.x
+在云服务器部署了python程序后运行，直接被killed。
+1、输入free -m 查看swap分区情况
+2、这里应该显示swap分区为0，表示配有分配，接下来开..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -88,20 +99,49 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="tag-list-title">标签列表</h2>
-          <div class="tags-container">
+          <div class="post-detail">
+            <h2 class="post-title">云服务器Linux系统环境下，执行python程序killed问题解决方法。</h2>
+            <div class="post-date">2020-11-16</div>
             
-              <a class="tag" href="https://supersuika.github.io/tag/bb1XvTgfx/">ssh</a>
+            <div class="post-content" v-pre>
+              <p>服务器操作系统：CentOS 7.6 64bit<br>
+Python：3.6.x<br>
+在云服务器部署了python程序后运行，直接被killed。</p>
+<p>1、输入free -m 查看swap分区情况<br>
+2、这里应该显示swap分区为0，表示配有分配，接下来开始执行<br>
+cd/opt      切换到我的opt目录<br>
+mkdir swap      创建文件夹<br>
+cd swap     切换到swap文件夹下<br>
+3、使用dd命令新建分区文件，这里分配1G<br>
+dd if=/dev/zero of=swapfile bs=1M count=1024<br>
+4、将swapfile增加为swap分区，并开启<br>
+mkswap swapfile<br>
+swapon swapfile<br>
+5、再次free -m swap分区已经变大</p>
+
+            </div>
             
-              <a class="tag" href="https://supersuika.github.io/tag/40IwexXH1/">test</a>
             
-              <a class="tag" href="https://supersuika.github.io/tag/EBq013nZW/">Django</a>
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://supersuika.github.io/post/ssh/">
+                  <h3 class="post-title">
+                    云服务器重置后，SSH无法链接问题。
+                  </h3>
+                </a>
+              </div>
             
-              <a class="tag" href="https://supersuika.github.io/tag/QsbYt47L2H/">Alipay</a>
+
             
-              <a class="tag" href="https://supersuika.github.io/tag/LcrcrsQ6Z/">MAC</a>
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
             
+
           </div>
+
         </div>
       </div>
     </div>
@@ -121,6 +161,29 @@ var app = new Vue({
 </script>
 
 
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '5214be495d1cfc4c195e',
+        clientSecret: 'c14938600203bcf5e4888a3257cecea959f6cfa4 ',
+        repo: 'Gitalk_Public_Store',
+        owner: 'SuperSuika',
+        admin: ['SuperSuika'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
